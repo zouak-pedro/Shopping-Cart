@@ -4,9 +4,10 @@ function printReceipt() {}
 function addItem(item) {
   let existed = false;
   if (cart.length !== 0) {
-    for (let i = 0; i <= cart.length - 1; i++) {
+    for (let i = 0; i < cart.length; i++) {
       if (cart[i].name === item.name) {
         existed = true;
+        cart[i].quentity = cart[i].quentity + item.quentity;
       }
     }
     if (!existed) {
@@ -18,7 +19,17 @@ function addItem(item) {
   }
 }
 
-function removeItem() {}
+function removeItem(item) {
+  for (let i = 0; i < cart.length; i++) {
+    console.log[i];
+    if (cart[i].name == item.name) {
+      cart[i].quentity = cart[i].quentity - item.quentity;
+      if (cart[i].quentity <= 0) {
+        cart.pop(i);
+      }
+    }
+  }
+}
 
 const item = {
   name: "Water Bottle",
